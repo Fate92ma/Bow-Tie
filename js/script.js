@@ -2,13 +2,15 @@ $(document).ready(function () { // Start Coding Here
 
     // Smooth Scroll
 
-    $('nav a').click(function () {
+    $('nav a').click(function (e) {
+
+        e.preventDefault()
 
         var sectionTo = $(this).attr('href');
 
         $('html, body').animate({
             scrollTop: $(sectionTo).offset().top
-        }, 1200);
+        }, 1000);
 
     });
 
@@ -22,12 +24,6 @@ $(document).ready(function () { // Start Coding Here
         } else {
             $("nav").css("background-color", "transparent")
         }
-    });
-
-    // Footer
-
-    $("input[type=text]").focusout(function () {
-        $(this).css("border-color", "red")
     });
 
 }); // End Code

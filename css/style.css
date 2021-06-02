@@ -16,19 +16,46 @@ Contact Me: fatema131khaled@gmail.com
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     -o-box-sizing: border-box;
-    font-family: arial
+    font-family: 'arial'
 }
 
 img {
     max-width: 100%
 }
 
-:root {
-    --color1: #FCEF8B;
-    --color2: #323332
+h1,
+h2,
+i {
+    overflow-wrap: anywhere;
 }
 
-/* Nav */
+/* Start Root */
+
+:root {
+    --color1: #FCEF8B;
+    --color2: #323332;
+    --white: #fff;
+    --black: #000
+}
+
+#home .intro button,
+figure img,
+input[type=submit],
+.card article button,
+.gallery-arrow > svg,
+.close-btn svg,
+footer button,
+#PPMiniCart .minicart-quantity {
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    -o-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
+}
+
+/* End Root */
+
+/* Start Nav */
 
 nav {
     position: fixed;
@@ -50,13 +77,15 @@ nav a:nth-of-type(2) {
     margin: 0 40px
 }
 
-@media (max-width: 300px) {
+@media (max-width: 480px) {
     nav a:nth-of-type(2) {
         margin: 0 20px
     }
 }
 
-/* Home */
+/* End Nav */
+
+/* Start Home */
 
 #home {
     position: relative
@@ -68,7 +97,7 @@ nav a:nth-of-type(2) {
     -moz-object-fit: cover;
     -o-object-fit: cover;
     object-fit: cover;
-    height: 700px;
+    height: 100vh;
     width: 100%;
     -webkit-object-position: top;
     -ms-object-position: top;
@@ -115,7 +144,7 @@ nav a:nth-of-type(2) {
 
 #home .intro h1,
 #home .intro i {
-    color: white
+    color: var(--white)
 }
 
 #home .intro h2 {
@@ -135,11 +164,6 @@ nav a:nth-of-type(2) {
     font-size: 16px;
     border: none;
     padding: 10px;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -o-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
     text-transform: uppercase;
     color: var(--color2);
     background: var(--color1)
@@ -151,11 +175,11 @@ nav a:nth-of-type(2) {
     color: var(--color1)
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
 
     #home .intro h1,
     #home .intro h2 {
-        font-size: 60px
+        font-size: 50px
     }
 
     #home .intro i {
@@ -163,51 +187,9 @@ nav a:nth-of-type(2) {
     }
 }
 
-@media (max-width: 400px) {
+/* End Home */
 
-    #home .intro h1,
-    #home .intro h2 {
-        font-size: 46px
-    }
-
-    #home .intro i {
-        font-size: 24px
-    }
-
-    #home .intro button {
-        padding: 8px;
-        font-size: 14px
-    }
-}
-
-@media (max-width: 350px) {
-    #home .intro {
-        letter-spacing: 0.2em
-    }
-
-    #home .intro h1,
-    #home .intro h2 {
-        font-size: 40px
-    }
-
-    #home .intro i {
-        font-size: 20px
-    }
-}
-
-@media (max-width: 275px) {
-
-    #home .intro h1,
-    #home .intro h2 {
-        font-size: 36px
-    }
-
-    #home .intro i {
-        font-size: 16px
-    }
-}
-
-/* Shop */
+/* Start Shop */
 
 #shop,
 #love {
@@ -238,7 +220,7 @@ nav a:nth-of-type(2) {
 }
 
 .shop {
-    width: 80%;
+    width: 96%;
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -249,14 +231,6 @@ figure {
     margin-bottom: 25px;
     border-radius: 4px;
     border: 1px dashed var(--color2)
-}
-
-figure img {
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -o-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s
 }
 
 figure img:hover {
@@ -278,11 +252,6 @@ figure ul li:nth-of-type(2) {
 }
 
 input[type=submit] {
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -o-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
     outline: 0;
     padding: 7px 10px;
     border: none;
@@ -311,13 +280,18 @@ fieldset {
 #PPMiniCart {
     display: none;
     position: fixed;
-    left: 40%;
-    top: 40%
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 #PPMiniCart form {
     position: relative;
-    padding: 10px;
+    padding: 5px;
     background: #fbfbfb;
     border-radius: 2px;
     -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
@@ -335,9 +309,9 @@ fieldset {
 }
 
 #PPMiniCart ul {
-    padding: 10px;
+    padding: 4px;
     list-style: none;
-    background: #fff;
+    background: var(--white);
     border: 1px solid #ccc;
     border-radius: 4px
 }
@@ -409,25 +383,10 @@ fieldset {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     font-size: 13px;
     text-align: right;
-    transition: border linear 0.2s, box-shadow linear 0.2s;
-    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
-    -o-transition: border linear 0.2s, box-shadow linear 0.2s
 }
 
 #PPMiniCart .minicart-quantity:hover {
     border-color: #0078C1
-}
-
-#PPMiniCart .minicart-quantity:focus {
-    border-color: #0078C1;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(0, 120, 193, 0.4);
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(0, 120, 193, 0.4);
-    -ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(0, 120, 193, 0.4);
-    -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(0, 120, 193, 0.4);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(0, 120, 193, 0.4)
 }
 
 #PPMiniCart .minicart-remove {
@@ -436,7 +395,7 @@ fieldset {
     background: #b7b7b7;
     border: 1px solid #a3a3a3;
     border-radius: 3px;
-    color: #fff;
+    color: var(--white);
     font-size: 14px;
     cursor: pointer
 }
@@ -460,7 +419,7 @@ fieldset {
     outline: 0;
     border: 1px solid #ffc727;
     border-radius: 5px;
-    color: #000;
+    color: var(--black);
     text-shadow: 1px 1px 1px #fff6e9;
     cursor: pointer;
     background: #ffaa00;
@@ -479,12 +438,8 @@ fieldset {
 }
 
 .minicart-showing #PPMiniCart {
+    width: fit-content;
     display: block;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
     animation: pop-in 0.25s;
     -webkit-animation: pop-in 0.25s;
     -moz-animation: pop-in 0.25s;
@@ -572,78 +527,30 @@ fieldset {
     }
 }
 
-@media (max-width: 500px) {
-    .shop {
-        width: 92%
-    }
+/* End Shop */
 
-    #shop h2,
-    #love h2 {
-        letter-spacing: 5px;
-        font-size: 40px
-    }
-
-    #shop i,
-    #love i {
-        font-size: 18px;
-        margin: 20px 0
-    }
-
-    #PPMiniCart {
-        left: 20%
-    }
-}
-
-@media (max-width: 350px) {
-
-    #shop h2,
-    #love h2 {
-        font-size: 34px
-    }
-
-    #shop h2,
-    #shop i,
-    #love h2,
-    #love i {
-        letter-spacing: 1px
-    }
-}
-
-@media (max-width: 320px) {
-    #PPMiniCart {
-        left: 5%
-    }
-}
-
-@media (max-width: 300px) {
-
-    #shop h2,
-    #love h2 {
-        font-size: 30px
-    }
-
-    #shop h2,
-    #shop i,
-    #love h2,
-    #love i {
-        padding: 0 10px
-    }
-}
-
-/* Card */
+/* Start Card */
 
 .card {
-    background: url(../media/img/man-wearing-bow-tie.jpg) bottom center/cover;
-    height: 640px;
-    padding: 100px
+    background: url(../media/card/man-wearing-bow-tie.jpg) bottom center/cover;
+    height: 100vh;
+    position: relative;
 }
 
 .card article {
     text-align: center;
     background: rgba(252, 239, 139, 0.7);
-    color: black;
-    width: 50%;
-    padding: 50px
+    color: var(--black);
+    padding: 50px;
+    left: 50%;
+    top: 50%;
+    width: 60%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .card article b {
@@ -673,88 +580,48 @@ fieldset {
     font-size: 16px;
     border: none;
     padding: 10px;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -o-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
     text-transform: uppercase;
-    color: black;
-    border: 1px solid black;
+    color: var(--black);
+    border: 1px solid var(--black);
     background: var(--color1)
 }
 
 .card article button:hover {
     cursor: pointer;
-    background: black;
+    background: var(--black);
     color: var(--color1)
 }
 
-@media (max-width: 1125px) {
+@media (max-width: 1200px) {
     .card article {
-        width: 75%
+        width: 70%
     }
 }
 
-@media (max-width: 900px) {
-    .card {
-        padding: 75px
-    }
-
+@media (max-width: 1024px) {
     .card article {
-        padding: 40px;
-        width: 100%
+        width: 80%
     }
 }
 
-@media (max-width: 600px) {
-    .card {
-        padding: 50px
-    }
-
-    .card article button {
-        padding: 8px;
-        font-size: 14px
-    }
-}
-
-@media (max-width: 500px) {
-    .card {
-        padding: 20px
-    }
-}
-
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     .card article {
-        padding: 20px
+        width: 94%
     }
 }
 
-@media (max-width: 300px) {
-    .card {
+@media (max-width: 480px) {
+    .card article {
         padding: 10px
     }
-
-    .card article i {
-        letter-spacing: 1px;
-        margin: 18px 0;
-        font-size: 18px
-    }
-
-    .card article p {
-        line-height: 25px;
-        margin: 18px 0
-    }
-
-    .card article button {
-        padding: 5px
-    }
 }
 
-/* Love */
+/* End Card */
+
+/* Start Love */
 
 .fg-gallery {
-    width: 75%;
+    width: 96%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -770,8 +637,8 @@ fieldset {
 .gallery-items {
     cursor: zoom-in;
     overflow: hidden;
-    height: 250px;
-    width: 32%;
+    height: 400px;
+    width: 24%;
     display: block;
     margin: 4px
 }
@@ -866,12 +733,7 @@ fieldset {
 }
 
 .gallery-arrow > svg {
-    fill: #fff;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
+    fill: var(--white);
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -914,14 +776,9 @@ fieldset {
 }
 
 .close-btn svg {
-    fill: #fff;
+    fill: var(--white);
     width: 15px;
     height: 15px;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
     -webkit-transform: rotateZ(0deg);
     -ms-transform: rotateZ(0deg);
     -moz-transform: rotateZ(0deg);
@@ -937,25 +794,27 @@ fieldset {
     transform: rotateZ(180deg)
 }
 
-@media (max-width: 1125px) {
-    .fg-gallery {
-        width: 94%
-    }
-
+@media (max-width: 1200px) {
     .gallery-items {
-        height: 300px;
-        width: 45%
+        width: 32%
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     .gallery-items {
-        height: 400px;
+        width: 48%
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-items {
         width: 100%
     }
 }
 
-/* Footer */
+/* End Love */
+
+/* Start Footer */
 
 footer {
     background: var(--color2);
@@ -972,7 +831,6 @@ footer ul i {
 input[type=text] {
     display: block;
     outline: 0;
-    width: 40%;
     margin: 15px auto;
     border: 2px solid var(--color1);
     padding: 6px
@@ -985,11 +843,6 @@ footer button {
     font-size: 15px;
     border: none;
     padding: 8px;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -o-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
     color: var(--color2);
     background: var(--color1);
     border: 1px solid var(--color2)
@@ -1014,7 +867,7 @@ footer ul {
 
 footer ul li {
     list-style: none;
-    color: white
+    color: var(--white)
 }
 
 footer ul li:nth-of-type(1) {
@@ -1030,27 +883,9 @@ footer ul li:nth-of-type(3) {
 }
 
 footer p {
-    background: black;
+    background: var(--black);
     padding: 10px;
-    color: white
+    color: var(--white)
 }
 
-@media (max-width: 600px) {
-    input[type=text] {
-        width: 80%
-    }
-
-    footer button {
-        padding: 7px
-    }
-
-    footer ul {
-        font-size: 14px
-    }
-}
-
-@media (max-width: 400px) {
-    input[type=text] {
-        width: 90%
-    }
-}
+/* End Footer */
